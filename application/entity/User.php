@@ -20,9 +20,37 @@ class User{
     /**
      * @var string
      *
+     * @Column(name="username", type="string", length=32, options={"comment": "账号"})
+     */
+    protected $username;
+
+    /**
+     * @var string
+     *
+     * @Column(name="password", type="string", length=64, options={"comment": "密码"})
+     */
+    protected $password;
+
+    /**
+     * @var string
+     *
+     * @Column(name="mobile", type="string", length=11, options={"comment": "手机号"})
+     */
+    protected $mobile;
+
+    /**
+     * @var string
+     *
      * @Column(name="name", type="string", length=32, options={"comment": "用户名称"})
      */
     protected $name;
+
+    /**
+     * @var string
+     *
+     * @Column(name="photo", type="string", length=255, options={"comment": "头像"})
+     */
+    protected $photo;
 
     public function setId($id)
     {
@@ -32,6 +60,36 @@ class User{
     public function getId()
     {
         return $this->id;
+    }
+
+    public function setUsername($username)
+    {
+        $this->username = $username;
+    }
+
+    public function getUsername()
+    {
+        return $this->username;
+    }
+
+    public function setPassword($password)
+    {
+        $this->password = $password;
+    }
+
+    public function getPassword()
+    {
+        return $this->password;
+    }
+
+    public function setMobile($mobile)
+    {
+        $this->mobile = $mobile;
+    }
+
+    public function getMobile()
+    {
+        return $this->mobile;
     }
 
     public function setName($name)
@@ -44,5 +102,14 @@ class User{
         return $this->name;
     }
 
+    public function serPhoto($photo)
+    {
+        $this->photo = $photo;
+    }
+
+    public function getPhoto()
+    {
+        return $this->photo;
+    }
 
 }
