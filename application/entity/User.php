@@ -52,6 +52,13 @@ class User{
      */
     protected $photo;
 
+    /**
+     * @var string
+     *
+     * @Column(name="create_time", type="string", length=64, options={"comment": "创建时间"})
+     */
+    protected $createTime;
+
     public function setId($id)
     {
         $this->id = $id;
@@ -102,7 +109,7 @@ class User{
         return $this->name;
     }
 
-    public function serPhoto($photo)
+    public function setPhoto($photo)
     {
         $this->photo = $photo;
     }
@@ -110,6 +117,16 @@ class User{
     public function getPhoto()
     {
         return $this->photo;
+    }
+
+    public function setCreate($createTime)
+    {
+        $this->createTime = $createTime;
+    }
+
+    public function getCreate()
+    {
+        return $this->createTime;
     }
 
 }
